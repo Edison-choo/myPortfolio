@@ -1,0 +1,7 @@
+<div class="showcase-container">
+    @for (item of project?.images; track item) {
+        <div class="showcase-image">
+            <img src="{{'/assets/images/'+item}}" alt="image">
+        </div>
+    }
+</div>

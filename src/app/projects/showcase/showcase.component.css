@@ -1,0 +1,26 @@
+.showcase-container {
+    background-color: #ECECEC;
+    width: 100%;
+    padding: 120px 0;
+}
+
+.showcase-image {
+    margin: 64px auto;
+    width: 60%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+
+}
+
+.showcase-image img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0% auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .showcase-image {
+        width: 80%;
+    }
+  }

@@ -1,0 +1,32 @@
+.footer-container {
+    text-align: center;
+    margin-top: 240px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-social-block {
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+    background-color: #999999;
+    margin: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social-block img {
+    height: 28px;
+    width: 28px;
+    color: white;
+}
+
+.footer-copyright {
+    color: #999999;
+    margin: 8px 0 32px;
+    font-size: 14px;
+}

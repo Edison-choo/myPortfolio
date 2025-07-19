@@ -1,0 +1,41 @@
+.detail-container {
+    display: flex;
+    margin: 160px 5%;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.detail-body {
+    width: 60%;
+    padding: 40px;
+}
+
+.detail-name {
+    font-size: 64px;
+    text-align: center;
+    padding: 0 32px;
+}
+
+.main-text {
+    font-size: 32px;
+}
+
+.skills {
+    margin: 28px 0;
+    display: flex;
+}
+
+.skill-pill {
+    opacity: 30%;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-right: 12px;
+    padding: 12px 12px;
+}
+
+@media only screen and (max-width: 768px) {
+    .detail-container {
+        margin: 40px 2%;
+    }
+  }

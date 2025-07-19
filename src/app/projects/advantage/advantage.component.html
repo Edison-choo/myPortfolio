@@ -1,0 +1,18 @@
+<div class="advantage-container">
+    <div class="advantage-title">
+        Advantage
+    </div>
+    <div class="advantage-body">
+        @for (item of project?.advantages; track item) {
+            <div class="advantage-pill">
+                <div class="advantage-icon">
+                
+                </div>
+                <div class="advantage-text">
+                    {{item}}
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

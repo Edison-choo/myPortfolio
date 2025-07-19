@@ -1,0 +1,47 @@
+.gallery-container {
+    padding: 52px 0 160px;
+    background-color: #eeeeee;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 52px;
+}
+
+.gallery-bar {
+    background-color: white;
+    border-radius: 8px;
+    margin: 0px auto 80px;
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    cursor: pointer;
+}
+
+.gallery-bar:hover {
+    width: 82%;
+    height: auto;
+}
+
+.gallery-header {
+    background-color: #353535;
+    font-size: 20px;
+    color: white;
+    padding: 20px;
+    border-radius: 8px 8px 0px 0;
+}
+
+.gallery-bar-body img {
+    height: 360px;
+    width: 80%;
+    object-fit: cover;
+    object-position: 0% 0%;
+    /* border-right: 1px solid #353535;
+    border-left: 1px solid #353535; */
+}
+
+.gallery-bar-body {
+    margin: 0px 32px;
+    text-align: center;
+}

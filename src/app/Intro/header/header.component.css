@@ -1,0 +1,56 @@
+.header-container {
+    margin: 100px 30% 200px;
+
+}
+
+.header-normal {
+    font-size: 28px;
+    
+}
+
+.header-bold {
+    font-size: 92px;
+    font-weight:900;
+    margin: 8px auto;
+    letter-spacing: 8px;
+    color: #72716F;
+}
+
+.header-dot {
+    color:#E07C1F;
+}
+
+.header-down {
+    text-align: center;
+}
+
+.header-down img {
+    height: 36px;
+    margin: 25% auto 24px;
+    cursor: pointer;
+}
+
+.header-down img:hover {
+    height: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+    .header-bold {
+        letter-spacing: 8px;
+        line-height: 0.8em;
+    }
+    
+    .header-bold span {
+      font-size: 64px ;
+    }
+
+    .header-normal span {
+        font-size: 20px ;
+    }
+
+    .header-container {
+        margin: 100px 10%;
+    
+    }
+  }
+  

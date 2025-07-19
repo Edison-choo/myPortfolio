@@ -1,0 +1,21 @@
+<div class="gallery-container">
+    <div class="gallery-title">
+        Latest Work
+    </div>
+    <div class="gallery-body">
+        @for (item of projects; track item) {
+            <a class="gallery-link" [routerLink]="['/project',item.id]">
+                <div class="gallery-bar">
+                    <div class="gallery-header">
+                        {{item.name}}
+                    </div>
+                    <div class="gallery-bar-body">
+                        <img src="{{'/assets/images/'+item.images[0]}}" alt="image">
+                    </div>
+                </div>
+                </a>
+        }
+        
+    </div>
+</div>
+

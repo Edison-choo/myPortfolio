@@ -1,0 +1,44 @@
+.navbar {
+    display: flex;
+    /* height: 48px; */
+    /* border-bottom: 2px solid #1E251D; */
+    justify-content: space-between;
+    align-items: center;
+    height: 52px;
+}
+
+.navbar-name {
+    margin: auto 24px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.navbar-pills {
+    display: flex;
+}
+
+.navbar-pills .navbar-pill {
+    margin: auto 12px;
+    opacity: 65%;
+}
+
+.navbar a {
+    color:#1E251D;
+    text-decoration: none;
+}
+
+.active {
+    opacity: 100% !important;
+}
+
+.navbar-contact {
+    /* margin: 16px 24px; */
+    border: #1E251D solid 1px;
+    margin: auto 24px;
+}
+
+.navbar-contact button {
+    background-color: transparent;
+    padding: 8px 12px;
+    cursor: pointer;
+}

@@ -1,0 +1,19 @@
+<!-- <p>detail works! {{inputFromParent}} {{project?.name}}</p> -->
+
+<div class="detail-container">
+    <div class="detail-name">
+        {{project?.name}}
+    </div>
+    <div class="detail-body">
+        <div class="main-text">
+            {{project?.description}}
+        </div>
+        <div class="skills">
+            @for (item of project?.skills; track item) {
+                <div class="skill-pill">
+                    {{item}}
+                </div>
+            }
+        </div>
+    </div>
+</div>

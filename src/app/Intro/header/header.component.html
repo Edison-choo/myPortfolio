@@ -1,0 +1,35 @@
+
+<diV class="header-container" id="header">
+    <!-- <div class="header-normal">
+        Dream to be a
+    </div> -->
+    @defer (on viewport;){
+    <div [@stagger]="title.length" class="header-bold">
+        @for (item of title; track item) {
+            @if (item == " ") {
+                <br/><span>{{item}}</span>
+            }
+            @else if (item == "'") {
+                <span class="header-dot">{{item}}</span>
+            }
+            @else {
+                <span>{{item}}</span>
+            }
+        }
+    </div>
+    } @placeholder {
+        <div style="height: 220px;"></div>
+    }
+    @defer (on viewport;){
+        <div [@stagger2]="desp.length" class="header-normal">
+            @for (item of desp; track item) {
+                <span>{{item}}</span>
+            }
+        </div>
+        } @placeholder {
+            <div style="height: 65px;"></div>
+        }
+    <!-- <div class="header-down">
+        <img src="/assets/images/arrowdown.png" alt="image">
+    </div>    -->
+</diV>

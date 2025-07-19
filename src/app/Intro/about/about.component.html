@@ -1,0 +1,50 @@
+<div class="about-container">
+    @defer (on viewport;){
+    <div class="about-photo" data-aos="fade-right" data-aos-duration="3000">
+        <div class="main-image">
+            <img src="/assets/images/mainimage.jfif" alt="image">
+        </div>
+        <div class="sub-image">
+            <img src="/assets/images/subimage.jfif" alt="image">
+        </div>
+    </div>
+    } @placeholder {
+        <div style="height: 540px; width: 440px"></div>
+    }
+    @defer (on viewport;){
+    <div class="about-body" data-aos="fade-left" data-aos-duration="3000">
+        <!-- <div class="main-text">
+            Hi, I'm <span class="text-name">EDISON CHOO</span>
+        </div> -->
+        <!-- <div class="underline"></div> -->
+        <div class="sub-text">
+            I graduated from NYP with a diploma in Information Technology. 
+            I have a passion in coding. To learn more about IT, I have
+            tried out multiple IT related projects and skillsets.
+        </div>
+        <div class="body-btn">
+            <button>Download Resume</button>
+        </div>
+    </div>
+    } @placeholder {
+        <div style="height: 540px; width: 480px"></div>
+    }
+</div>
+
+<script>
+    const observer = new IntersectionObserver(entries => {
+  // Loop over the entries
+  entries.forEach(entry => {
+    // If the element is visible
+    if (entry.isIntersecting) {
+      // Add the animation class
+      entry.target.classList.add('image-animation');
+    }
+  });
+});
+
+const viewbox = document.querySelectorAll('.image');
+viewbox.forEach(image => {
+  observer.observe(image);
+});
+</script>

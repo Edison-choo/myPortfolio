@@ -25,9 +25,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/aos/dist/aos.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/anim.js",
+              "node_modules/aos/dist/aos.js",
+              "node_modules/aos/dist/aos.esm.js",
+              "src/script.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -96,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "51b5847a-f8b5-40c4-bcf8-719d1b94395b"
   }
 }

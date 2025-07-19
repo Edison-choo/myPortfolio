@@ -1,0 +1,57 @@
+.cert-container {
+    padding: 160px 20%;
+    background-color: #ECECEC;
+}
+
+.cert-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 80px;
+}
+
+.cert-bar {
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px 40px;
+    margin: 0px 0px 28px;
+    align-items: center;
+    position: relative;
+}
+
+.cert-img img {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    margin: 40px;
+}
+
+.cert-bar-body {
+    margin: 0px 32px;
+    padding: 20px;
+}
+
+.cert-bar-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 12px 0px 12px;
+}
+
+.cert-bar-text {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+    .cert-container {
+        padding: 160px 5%;
+    }
+
+    .cert-img img {
+        height: 60px;
+        width: 60px;
+        margin: 20px;
+    }
+  }
