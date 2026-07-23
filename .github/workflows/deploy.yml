@@ -1,0 +1,53 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:  # Allows you to run it manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular app
+        run: npm run build -- --configuration production --base-href=/myPortfolio/
+
+      # DEBUG: This shows us exactly what folder the build created
+      - name: List contents of dist
+        run: |
+          echo "Contents of dist:"
+          ls -la dist/
+          echo "Contents of dist/myPortfolio:"
+          ls -la dist/myPortfolio/ || echo "Folder not found"
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # If the debug shows a 'browser' folder inside dist/myPortfolio, change this to ./dist/myPortfolio/browser
+          # If index.html is directly inside dist/myPortfolio, keep it as ./dist/myPortfolio
+          path: ./dist/myPortfolio
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
