@@ -1,0 +1,32 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches: [ "master" ]  # Change to "main" if your default branch is main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20  # Use 18 or 20, matching your project
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the Angular app
+        # Replace "your-repo-name" with your actual repository name (keep the slashes)
+        run: npm run build -- --configuration production --base-href=/myPortfolio/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # If your dist folder has a /browser subfolder (due to Angular Universal/SSR), use ./dist/your-app-name/browser
+          # If it doesn't, use ./dist/your-app-name
+          publish_dir: ./dist/myPortfolio/browser
