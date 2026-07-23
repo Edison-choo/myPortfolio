@@ -30,3 +30,4 @@ jobs:
           # If your dist folder has a /browser subfolder (due to Angular Universal/SSR), use ./dist/your-app-name/browser
           # If it doesn't, use ./dist/your-app-name
           publish_dir: ./dist/myPortfolio/browser
+          enable_jekyll: false
