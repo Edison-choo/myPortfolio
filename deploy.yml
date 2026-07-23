@@ -1,13 +1,12 @@
 name: Deploy Angular to GitHub Pages
-# test
 
 on:
   push:
-    branches: [ "master" ]  # Change to "main" if your default branch is main
-  workflow_dispatch:
+    branches: [ "master" ]
+  workflow_dispatch:  # Allows you to run it manually
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -16,20 +15,39 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20  # Use 18 or 20, matching your project
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build the Angular app
-        # Replace "your-repo-name" with your actual repository name (keep the slashes)
+      - name: Build Angular app
         run: npm run build -- --configuration production --base-href=/myPortfolio/
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      # DEBUG: This shows us exactly what folder the build created
+      - name: List contents of dist
+        run: |
+          echo "Contents of dist:"
+          ls -la dist/
+          echo "Contents of dist/myPortfolio:"
+          ls -la dist/myPortfolio/ || echo "Folder not found"
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # If your dist folder has a /browser subfolder (due to Angular Universal/SSR), use ./dist/your-app-name/browser
-          # If it doesn't, use ./dist/your-app-name
-          publish_dir: ./dist/myPortfolio
-          enable_jekyll: false
+          # If the debug shows a 'browser' folder inside dist/myPortfolio, change this to ./dist/myPortfolio/browser
+          # If index.html is directly inside dist/myPortfolio, keep it as ./dist/myPortfolio
+          path: ./dist/myPortfolio
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
