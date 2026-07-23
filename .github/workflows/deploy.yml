@@ -36,7 +36,7 @@ jobs:
         with:
           # If the debug shows a 'browser' folder inside dist/myPortfolio, change this to ./dist/myPortfolio/browser
           # If index.html is directly inside dist/myPortfolio, keep it as ./dist/myPortfolio
-          path: ./dist/my-portfolio
+          path: ./dist/my-portfolio/browser
 
   deploy:
     needs: build
